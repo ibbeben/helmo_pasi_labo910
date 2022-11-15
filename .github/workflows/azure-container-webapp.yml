@@ -64,8 +64,6 @@ jobs:
       - uses: azure/container-scan@v0
         with:
           image-name: ${{ secrets.REGISTRY_LOGIN_SERVER }}/my-image:${{ github.run_number }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}   
           severity-threshold: CRITICAL
           run-quality-checks: true     
   deploy:
