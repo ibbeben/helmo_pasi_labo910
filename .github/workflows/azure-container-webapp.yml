@@ -69,5 +69,5 @@ jobs:
           
       - name: Push image
         run: |
-         docker push ${{ secrets.ACR_LOGIN_SERVER }}/docker-image:${{ github.run_number }}  
+         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-image:${{ github.run_number }}  
       
