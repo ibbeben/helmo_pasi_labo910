@@ -58,16 +58,16 @@ jobs:
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
       - name: Build the docker image
-        run: docker build . --file Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/my-image-name:${{ github.run_number }}
+        run: docker build . --file Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-image:${{ github.run_number }}
          
       - name: Scan image
         uses: azure/container-scan@v0
         with:
-          image-name: ${{ secrets.REGISTRY_LOGIN_SERVER }}/my-image:${{ github.run_number }}
+          image-name: ${{ secrets.REGISTRY_LOGIN_SERVER }}/docker-image:${{ github.run_number }}
           severity-threshold: CRITICAL
           run-quality-checks: true  
           
       - name: Push image
         run: |
-         docker push ${{ secrets.ACR_LOGIN_SERVER }}/my-image-name:${{ github.run_number }}  
+         docker push ${{ secrets.ACR_LOGIN_SERVER }}/docker-image:${{ github.run_number }}  
       
