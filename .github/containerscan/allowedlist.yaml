@@ -1,6 +1,16 @@
 general:
   vulnerabilities:
-    - CVE-2003-1307
-    - CVE-2011-3374
+    - CVE-2021-30473
+    - CVE-2021-30474
+    - CVE-2021-30475
+    - CVE-2021-43400
+    - CVE-2019-8457
+    - CVE-2022-1253
+    - CVE-2021-29921
+    - CVE-2021-46848
+    - CVE-2022-3570
   bestPracticeViolations:
-    - CIS-DI-0005
+    - CIS-DI-0001
+    - CIS-DI-0006
+    - CIS-DI-0008
+    - DKL-LI-0003
